@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 10px;
+}
+
+// ===FONTS===
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap');
+
+// Title font Fira Sans(bold, regular);
+$titleFont: 'Fira Sans',
+sans-serif;
+// Text font  Montserrat(bold, regular, light)
+$textFont: 'Montserrat',
+sans-serif;
+
+// ===Fonts-Sizes===
+$xs-size: 1.2rem;
+$s-size: 1.6rem;
+$m-size: 2.6rem;
+$l-size: 3.8rem;
+$xl-size: 4.6rem;
+$xxl-size: 5.6rem;
+$xxxl-size: 6.6rem;
+
+// ===COLORS===
+$white: #ffffff;
+$lightGray: #f9f9f9;
+$gray: #878787;
+$dark-gray: #2b2b2b;
+$black: #000000;
+$iConViolet: #cb99c9;
+$pastel-green: #77dd77;
+$pastel-pink: #ffd1dc;
+$pastel-violet: #8565c4;
+
+// ===GLOBAL====
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    cursor: default;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.btn {
+    border-radius: 25px;
+    font-family: $textFont;
+    font-size: $s-size;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.section__title {
+    margin-bottom: 20px;
+    font-family: $titleFont;
+    font-size: $l-size;
+    color: $dark-gray;
+    letter-spacing: .2rem;
+}
+
+.section__paragraph {
+    font-family: $textFont;
+    font-size: $s-size;
+    color: $gray;
+    letter-spacing: .1rem;
+}
+
+// ===MIXIN====
+@mixin centerByPosition($position, $top, $left, $axisX, $axisY) {
+    position: $position;
+    top: $top;
+    left: $left;
+    transform: translate($axisX, $axisY);
+}
+
+@mixin iConSetUp($fontSize, $color) {
+    font-size: $fontSize;
+    color: $color;
+}
