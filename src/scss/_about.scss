@@ -1,0 +1,78 @@
+.more-about {
+    .container {
+        display: grid;
+        grid-template-columns: minmax(200px, 450px) 1fr;
+        grid-auto-rows: minmax(200px, 300px) 60px;
+        padding: 80px 0;
+
+        .more-about__portrait {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+
+            .portrait-img {
+                width: 100%;
+                border-radius: 5px;
+            }
+        }
+
+        .more-about__social {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+
+        .more-about__social {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 75%;
+            margin: 0 auto;
+
+            .social {
+                position: relative;
+                width: 40px;
+                height: 40px;
+                background-color: $lightGray;
+                border-radius: 50%;
+                transition: .5s;
+
+                [class^="svg"] {
+                    @include centerByPosition(absolute, 50%, 50%, -50%, -50%);
+                    @include iConSetUp($s-size, $dark-gray);
+                    transition: .3s;
+                }
+
+                &:hover {
+                    background-color: $dark-gray;
+                    transform: scale(1.2);
+                    cursor: pointer;
+
+                    [class^="svg"] {
+                        color: $white;
+                        transform: scale(1.2);
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+
+        .more-about__describe {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            padding: 25px 0 15px 70px;
+
+            .more-about__profession {
+                margin-top: 15px;
+                font-family: $titleFont;
+                font-size: $s-size;
+                color: $gray;
+                letter-spacing: .1rem;
+            }
+
+            .section__paragraph {
+                &.--more-about {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}

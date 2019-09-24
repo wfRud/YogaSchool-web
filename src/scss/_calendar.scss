@@ -1,0 +1,58 @@
+#schedule {
+    padding: 80px 0;
+
+    .container {
+        .schedule-description {
+            .section__paragraph {
+                &:first-of-type {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        #calendar {
+            padding-top: 35px;
+
+            .fc-left {
+                color: $dark-gray;
+                font-family: $textFont;
+            }
+
+            .fc-right {
+                .fc-button {
+                    background-color: $iConViolet;
+                    border: $iConViolet;
+                }
+            }
+
+            .fc-head,
+            .fc-body {
+                border-color: $dark-gray;
+            }
+
+            .fc-day-header {
+                font-size: $xs-size;
+                font-family: $textFont;
+            }
+
+            .fc-day-number {
+                font-size: $s-size;
+            }
+
+            .fc-today {
+                background-color: $pastel-pink;
+            }
+
+            .fc-event-container {
+                font-family: $textFont;
+            }
+
+            .fc-event {
+                font-size: 1.3em;
+                line-height: 1.6em;
+                letter-spacing: .1em;
+                cursor: default;
+            }
+        }
+    }
+}
