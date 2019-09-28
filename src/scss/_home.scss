@@ -1,16 +1,34 @@
 #home {
     display: flex;
     align-items: center;
+    width: 100%;
     min-height: 100vh;
     background: url('../images/hero-img.jpg') no-repeat center center/cover;
     background-attachment: fixed;
     filter: grayscale(15%);
+
+    @include breakpoint(tablet) {
+        align-items: flex-end;
+    }
+
+    @include breakpoint(mobile) {
+        align-items: center;
+        filter: grayscale(35%);
+    }
 
     .container {
         min-height: 35vh;
         display: flex;
         justify-content: flex-end;
         align-items: center;
+
+        @include breakpoint(tablet) {
+            margin-bottom: 150px;
+        }
+
+        @include breakpoint(mobile) {
+            margin: 0;
+        }
 
         .hero-thumb {
             display: flex;
@@ -24,6 +42,17 @@
             font-family: $textFont;
             color: $white;
             letter-spacing: .2rem;
+
+            @include breakpoint(tablet) {
+                width: 70%;
+                margin-top: 40px;
+            }
+
+            @include breakpoint(mobile) {
+                width: 100%;
+                margin-top: 0;
+                text-align: center;
+            }
 
             .hero-thumb__title {
                 font-family: $titleFont;
@@ -44,6 +73,18 @@
                     color: $dark-gray;
                     line-height: $xl-size;
 
+                    @include breakpoint(bigTabs) {
+                        width: 45%;
+                    }
+
+                    @include breakpoint(tablet) {
+                        width: 50%;
+                    }
+
+                    @include breakpoint(mobile) {
+                        width: 55%;
+                        margin: 0 auto;
+                    }
 
                     &:hover {
                         color: $white;

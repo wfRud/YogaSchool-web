@@ -9,6 +9,14 @@
         grid-template-columns: 1fr;
         grid-template-rows: 150px 1000px;
 
+        @include breakpoint(tablet) {
+            grid-template-rows: 150px auto;
+        }
+
+        @include breakpoint(mobile) {
+            grid-template-rows: 150px auto;
+        }
+
         .gallery-cnt {
             display: grid;
             grid-template-rows: repeat(6, 1fr);
@@ -16,10 +24,40 @@
             grid-gap: 20px;
             height: 100%;
 
+            @include breakpoint(bigTabs) {
+                grid-gap: 15px;
+            }
+
+            @include breakpoint(tablet) {
+                display: flex;
+                flex-direction: column;
+            }
+
+            @include breakpoint(mobile) {
+                display: flex;
+                flex-direction: column;
+            }
+
             .gallery-item {
                 position: relative;
                 background-color: $pastel-violet;
                 z-index: 0;
+
+                @include breakpoint(tablet) {
+                    margin-bottom: 20px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                @include breakpoint(mobile) {
+                    margin-bottom: 20px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
 
                 &.small {
                     grid-row: span 1;

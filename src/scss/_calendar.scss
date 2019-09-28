@@ -7,6 +7,12 @@
                 &:first-of-type {
                     margin-bottom: 15px;
                 }
+
+                @include breakpoint(tablet) {
+                    &:last-of-type {
+                        display: none;
+                    }
+                }
             }
         }
 

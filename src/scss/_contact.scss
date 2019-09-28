@@ -7,16 +7,44 @@
         display: grid;
         grid-template-rows: 120px 330px;
         grid-template-columns: 1fr 525px;
+
+        @include breakpoint(bigTabs) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include breakpoint(tablet) {
+            grid-template-columns: 1fr;
+        }
+
+        @include breakpoint(mobile) {
+            grid-template-columns: 1fr;
+        }
     }
 
     .contact-describe {
         grid-row: 1;
         grid-column: 1;
+
+        @include breakpoint(tablet) {
+            padding: 0 15px;
+        }
+
+        @include breakpoint(mobile) {
+            padding: 0 15px;
+        }
     }
 
     .form-cnt {
         grid-row: 2 / span 2;
         grid-column: 1;
+
+        @include breakpoint(tablet) {
+            padding: 0 15px;
+        }
+
+        @include breakpoint(mobile) {
+            padding: 0 15px;
+        }
 
         form {
             display: flex;
@@ -53,6 +81,19 @@
             .off-set {
                 width: 70%;
                 visibility: hidden;
+
+                @include breakpoint(bigTabs) {
+                    width: 60%;
+                }
+
+                @include breakpoint(tablet) {
+                    display: none;
+                }
+
+                @include breakpoint(mobile) {
+                    display: none;
+                }
+
             }
 
             .btn {
@@ -62,6 +103,20 @@
                     background-color: $dark-gray;
                     color: $white;
                     border: none;
+
+                    @include breakpoint(bigTabs) {
+                        width: 40%;
+                    }
+
+                    @include breakpoint(tablet) {
+                        width: 40%;
+                        margin: 0 auto;
+                    }
+
+                    @include breakpoint(mobile) {
+                        width: 40%;
+                        margin: 0 auto;
+                    }
 
                     &:hover {
                         background-color: $pastel-violet;
@@ -76,6 +131,14 @@
         grid-row: 2;
         grid-column: 2;
         margin-left: 40px;
+
+        @include breakpoint(tablet) {
+            display: none;
+        }
+
+        @include breakpoint(mobile) {
+            display: none;
+        }
 
         .section__paragraph {
             &.--contact {

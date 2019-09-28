@@ -11,13 +11,19 @@
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
+
+            @include breakpoint(tablet) {
+                text-align: center;
+            }
         }
 
         .training__types {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
-            margin: 70px 0;
+            max-width: 100%;
+            flex-wrap: wrap;
+            margin: 50px 0;
 
 
             .training_type {
@@ -28,6 +34,7 @@
                 flex-shrink: 0;
                 height: 300px;
                 width: 250px;
+                margin: 20px 0;
                 padding: 30px 0;
                 background-color: $white;
                 font-family: $textFont;

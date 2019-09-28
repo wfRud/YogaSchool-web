@@ -1,11 +1,12 @@
 .dot-nav {
     position: fixed;
     top: 50%;
-    right: 0;
+    right: -5%;
     transform: translateY(-50%);
     height: 50%;
     width: 5%;
     background-color: transparent;
+    transition: .3s;
     z-index: 9999;
 
     .dot-nav__list {
@@ -55,5 +56,9 @@
             background-color: $dark-gray;
             cursor: pointer;
         }
+    }
+
+    &.active {
+        right: 0%;
     }
 }
