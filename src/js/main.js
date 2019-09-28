@@ -13,6 +13,9 @@ import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 
+// JS
+import './preloader';
+
 
 const navigation = document.getElementById('navigation');
 
