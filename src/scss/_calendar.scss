@@ -3,6 +3,7 @@
 
     .container {
         .schedule-description {
+
             .section__paragraph {
                 &:first-of-type {
                     margin-bottom: 15px;
@@ -12,6 +13,16 @@
                     &:last-of-type {
                         display: none;
                     }
+                }
+            }
+
+            &.animated {
+                &>.section__title {
+                    animation: fadeInOut 1s forwards;
+                }
+
+                &>.section__paragraph {
+                    animation: fadeInOut 1s .25s forwards;
                 }
             }
         }
@@ -58,6 +69,10 @@
                 line-height: 1.6em;
                 letter-spacing: .1em;
                 cursor: default;
+            }
+
+            &.animated {
+                animation: fadeInOut 1s .5s forwards;
             }
         }
     }

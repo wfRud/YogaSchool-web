@@ -92,6 +92,20 @@
                     }
                 }
             }
+
+            &.animated {
+                &>.hero-thumb__title {
+                    animation: fadeInOut 1s ease-in-out;
+                }
+
+                &>.hero-thumb__text {
+                    animation: fadeInOut 1s ease-in-out;
+                }
+
+                &>.btn {
+                    animation: fadeInOut 1s ease-in-out;
+                }
+            }
         }
     }
 }

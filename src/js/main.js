@@ -15,6 +15,7 @@ import '@fortawesome/fontawesome-free/js/brands';
 
 // JS
 import './preloader';
+import './animateSection';
 
 
 const navigation = document.getElementById('navigation');
