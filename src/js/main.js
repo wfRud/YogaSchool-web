@@ -20,6 +20,6 @@ import './animateSection';
 
 const navigation = document.getElementById('navigation');
 
-document.addEventListener('click', () => {
-    navigation.classList.toggle('active');
+document.addEventListener('scroll', () => {
+    navigation.classList.add('active');
 });

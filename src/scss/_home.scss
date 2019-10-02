@@ -90,6 +90,10 @@
                         color: $white;
                         background-color: $black;
                     }
+
+                    &:focus {
+                        scroll-behavior: smooth;
+                    }
                 }
             }
 
