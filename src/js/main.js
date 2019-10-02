@@ -16,10 +16,13 @@ import '@fortawesome/fontawesome-free/js/brands';
 // JS
 import './preloader';
 import './animateSection';
+import './navigation';
 
 
-const navigation = document.getElementById('navigation');
+const navigation = document.querySelector('.dot-nav');
 
 document.addEventListener('scroll', () => {
-    navigation.classList.add('active');
+    if (window.innerWidth > 768) {
+        navigation.classList.add('active');
+    };
 });

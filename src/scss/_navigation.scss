@@ -1,73 +1,198 @@
-.dot-nav {
-    position: fixed;
-    top: 50%;
-    right: -5%;
-    transform: translateY(-50%);
-    height: 50%;
-    width: 5%;
-    background-color: transparent;
-    transition: .3s;
-    z-index: 9999;
+.navigate {
+    .hamburger {
+        position: fixed;
+        top: 5%;
+        right: 5%;
+        display: none;
+        margin: 0;
+        padding: 10px;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+        z-index: 9999;
 
-    .dot-nav__list {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: 100%;
-        list-style: none;
+        @include breakpoint(tablet) {
+            display: inline-block;
+        }
+
+        @include breakpoint(mobile) {
+            display: inline-block;
+        }
+
+
+        .hamburger__box {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+
+            .hamburger__inner {
+                @include hamburger-lines;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                transition: background-color .1s .2s ease-in-out;
+
+                &::before,
+                &::after {
+                    @include hamburger-lines;
+                    content: '';
+                    left: 0;
+                    transition: all .2s .2s ease-in-out;
+                    transition-property: transform, background-color;
+                }
+
+                &::before {
+                    top: -10px;
+                }
+
+                &::after {
+                    top: 10px;
+                }
+            }
+        }
+
+        &.active {
+            .hamburger__inner {
+                background-color: transparent;
+
+                &::before {
+                    background-color: $white;
+                    transform: translateY(10px) rotate(45deg);
+                }
+
+                &::after {
+                    background-color: $white;
+                    transform: translateY(-10px) rotate(-45deg);
+                }
+            }
+        }
     }
 
-    .dot-nav__item {
-        position: relative;
-        width: $s-size;
-        height: $s-size;
-        border: 2px solid $dark-gray;
-        border-radius: 50%;
-        transition: .4s;
-        z-index: 2;
+    .dot-nav {
+        position: fixed;
+        top: 50%;
+        right: -5%;
+        transform: translateY(-50%);
+        height: 50%;
+        width: 5%;
+        background-color: transparent;
+        transition: .3s;
+        z-index: 9999;
 
-        .dot-nav__link {
-            position: absolute;
+        @include breakpoint(tablet) {
             top: 0;
             left: 0;
-            width: 100%;
+            transform: translateY(-100%);
+            height: 100vh;
+            width: 100vw;
+            background-color: $pastel-violet;
+            transition: .3s;
+            z-index: 9997;
+
+            &.active {
+                transform: translateY(0);
+            }
+        }
+
+        .dot-nav__list {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
             height: 100%;
-            background-color: transparent;
+            list-style: none;
         }
 
-        &:first-of-type::before {
-            display: none;
+        .dot-nav__item {
+            position: relative;
+            width: $s-size;
+            height: $s-size;
+            border: 2px solid $dark-gray;
+            border-radius: 50%;
+            transition: background-color .4s;
+            z-index: 2;
+
+            @include breakpoint(tablet) {
+                width: 50%;
+                height: auto;
+                border: 0;
+            }
+
+            @include breakpoint(mobile) {
+                width: 100%;
+                height: auto;
+                border: 0;
+            }
+
+            .dot-nav__link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+
+                @include breakpoint(tablet) {
+                    font-size: $l-size;
+                    font-family: $titleFont;
+                    color: $white;
+                    text-align: center;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+
+                @include breakpoint(mobile) {
+                    font-size: $l-size;
+                    font-family: $titleFont;
+                    color: $white;
+                    text-align: center;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            }
+
+            &:first-of-type::before {
+                display: none;
+            }
+
+            &:last-of-type::after {
+                display: none;
+            }
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: -42px;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 350%;
+                width: 2px;
+                background-color: $dark-gray;
+                pointer-events: none;
+
+                @include breakpoint(tablet) {
+                    display: none;
+                }
+
+                @include breakpoint(mobile) {
+                    display: none;
+                }
+            }
+
+            &::after {
+                top: 14px;
+            }
+
+            &:hover {
+                background-color: $dark-gray;
+                cursor: pointer;
+            }
         }
 
-        &:last-of-type::after {
-            display: none;
+        &.active {
+            right: 0%;
         }
-
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            top: -42px;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 350%;
-            width: 2px;
-            background-color: $dark-gray;
-            pointer-events: none;
-        }
-
-        &::after {
-            top: 14px;
-        }
-
-        &:hover {
-            background-color: $dark-gray;
-            cursor: pointer;
-        }
-    }
-
-    &.active {
-        right: 0%;
     }
 }
