@@ -17,12 +17,3 @@ import '@fortawesome/fontawesome-free/js/brands';
 import './preloader';
 import './animateSection';
 import './navigation';
-
-
-const navigation = document.querySelector('.dot-nav');
-
-document.addEventListener('scroll', () => {
-    if (window.innerWidth > 768) {
-        navigation.classList.add('active');
-    };
-});
